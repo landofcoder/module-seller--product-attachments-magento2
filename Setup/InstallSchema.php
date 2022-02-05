@@ -100,9 +100,9 @@ class InstallSchema implements InstallSchemaInterface
         $setup->getConnection()->createTable($lofmp_product_attachment);
 
         /**
-         * Create table 'lofmp_product_attachment'
+         * Create table 'lofmp_product_attachment_title'
          */
-        $lofmp_product_attachment = $setup->getConnection()
+        $lofmp_product_attachment_title = $setup->getConnection()
         ->newTable($setup->getTable('lofmp_product_attachment_title'))
         ->addColumn(
             Attachment::TITLE_ID,

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  * Landofcoder
+  *
+  * NOTICE OF LICENSE
+  *
+  * This source file is subject to the Landofcoder.com license that is
+  * available through the world-wide-web at this URL:
+  * https://landofcoder.com/terms
+  *
+  * DISCLAIMER
+  *
+  * Do not edit or add to this file if you wish to upgrade this extension to newer
+  * version in the future.
+  *
+  * @category   Landofcoder
+  * @package    Lofmp_ProductAttachment
+  * @copyright  Copyright (c) 2022 Landofcoder (https://www.landofcoder.com/)
+  * @license    https://landofcoder.com/terms
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Section adding tabs, fieldsets etc. for product form -->
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="product_attachment" xsi:type="array">
+                    <item name="class" xsi:type="string">LizardMedia\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Composite</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="LizardMedia\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Composite">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="attachmentPanel" xsi:type="string">LizardMedia\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\AttachmentPanel</item>
+                <item name="attachments" xsi:type="string">LizardMedia\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Attachments</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- End of section -->
+
+
+    <!-- Plugin section -->
+    <type name="Lof\MarketPlace\Controller\Marketplace\Product\Initialization\Helper">
+        <plugin name="Lofmp_ProductAttachment::initAttachmentsDataForProduct"
+                type="Lofmp\ProductAttachment\Plugin\InitForSave" sortOrder="70" />
+    </type>
+    <!-- End of plugin section -->
+
+
+    <!-- Proxy section -->
+    <type name="Lofmp\ProductAttachment\Controller\Marketplace\Attachment\File\Preview">
+        <arguments>
+            <argument name="downloadProcessor" xsi:type="object">LizardMedia\ProductAttachment\Controller\DownloadProcessor\Proxy</argument>
+        </arguments>
+    </type>
+    <!-- End of proxy section -->
+
+</config>

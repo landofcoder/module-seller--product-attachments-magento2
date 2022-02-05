@@ -18,10 +18,9 @@
   * @copyright  Copyright (c) 2022 Landofcoder (https://www.landofcoder.com/)
   * @license    https://landofcoder.com/terms
   -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">
-    <router id="marketplace">
-        <route id="downloadable" frontName="downloadable">
-            <module name="Lofmp_ProductAttachment" after="Magento_Catalog"/>
-        </route>
-    </router>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+        <event name="catalog_product_save_before">
+            <observer name="Lofmp_ProductAttachment::typeConvertingPrevention" instance="Lofmp\ProductAttachment\Observer\Marketplace\TypeConvertingPrevention"/>
+        </event>
 </config>
