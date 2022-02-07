@@ -25,6 +25,7 @@ declare(strict_types = 1);
 namespace Lofmp\ProductAttachment\Ui\DataProvider\Product\Form\Modifier;
 
 use LizardMedia\ProductAttachment\Model\Attachment;
+use LizardMedia\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Composite;
 use Lofmp\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Data\Attachments as AttachmentsData;
 use Magento\Catalog\Model\Locator\LocatorInterface;
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
