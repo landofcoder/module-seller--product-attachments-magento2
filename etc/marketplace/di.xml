@@ -36,7 +36,7 @@
         <arguments>
             <argument name="modifiers" xsi:type="array">
                 <item name="attachmentPanel" xsi:type="string">LizardMedia\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\AttachmentPanel</item>
-                <item name="attachments" xsi:type="string">LizardMedia\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Attachments</item>
+                <item name="attachments" xsi:type="string">Lofmp\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Attachments</item>
             </argument>
         </arguments>
     </type>
