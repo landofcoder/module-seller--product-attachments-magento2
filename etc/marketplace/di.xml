@@ -59,4 +59,5 @@
     </type>
     <!-- End of proxy section -->
 
+    <preference for="LizardMedia\ProductAttachment\Model\Attachment" type="Lofmp\ProductAttachment\Model\Attachment"/>
 </config>
