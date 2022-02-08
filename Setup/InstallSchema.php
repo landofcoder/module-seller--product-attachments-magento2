@@ -54,7 +54,7 @@ class InstallSchema implements InstallSchemaInterface
         /**
          * Create table 'lofmp_product_attachment'
          */
-        $lofmp_product_attachment = $setup->getConnection()
+        /* $lofmp_product_attachment = $setup->getConnection()
         ->newTable($setup->getTable('lofmp_product_attachment'))
         ->addColumn(
             Attachment::ID,
@@ -97,12 +97,12 @@ class InstallSchema implements InstallSchemaInterface
             )
         ->setComment('Retailer link to seller. '.Attachment::MAIN_TABLE.' and lof_marketplace_seller');
 
-        $setup->getConnection()->createTable($lofmp_product_attachment);
+        $setup->getConnection()->createTable($lofmp_product_attachment); */
 
         /**
          * Create table 'lofmp_product_attachment_title'
          */
-        $lofmp_product_attachment_title = $setup->getConnection()
+        /* $lofmp_product_attachment_title = $setup->getConnection()
         ->newTable($setup->getTable('lofmp_product_attachment_title'))
         ->addColumn(
             Attachment::TITLE_ID,
@@ -145,7 +145,7 @@ class InstallSchema implements InstallSchemaInterface
             )
         ->setComment('Retailer link to seller. '.Attachment::TITLE_TABLE.' and lof_marketplace_seller');
 
-        $setup->getConnection()->createTable($lofmp_product_attachment_title);
+        $setup->getConnection()->createTable($lofmp_product_attachment_title); */
 
         /** End Setup */
 

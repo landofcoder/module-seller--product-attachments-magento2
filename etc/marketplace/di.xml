@@ -44,9 +44,9 @@
 
 
     <!-- Plugin section -->
-    <type name="Lof\MarketPlace\Controller\Marketplace\Product\Initialization\Helper">
+    <type name="Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper">
         <plugin name="Lofmp_ProductAttachment::initAttachmentsDataForProduct"
-                type="Lofmp\ProductAttachment\Plugin\InitForSave" sortOrder="70" />
+                type="LizardMedia\ProductAttachment\Plugin\InitForSave" sortOrder="70" />
     </type>
     <!-- End of plugin section -->
 

@@ -27,6 +27,7 @@ namespace Lofmp\ProductAttachment\Ui\DataProvider\Product\Form\Modifier;
 use LizardMedia\ProductAttachment\Model\Attachment;
 use LizardMedia\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Composite;
 use Lofmp\ProductAttachment\Ui\DataProvider\Product\Form\Modifier\Data\Attachments as AttachmentsData;
+use Lofmp\ProductAttachment\Helper\Data;
 use Magento\Catalog\Model\Locator\LocatorInterface;
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
 use Magento\Downloadable\Model\Source\TypeUpload;
@@ -74,12 +75,18 @@ class Attachments extends AbstractModifier
     private $storeManager;
 
     /**
+     * @var Data
+     */
+    protected $helperData;
+
+    /**
      * @param AttachmentsData $attachmentsData
      * @param LocatorInterface $locator
      * @param TypeUpload $typeUpload
      * @param ArrayManager $arrayManager
      * @param UrlInterface $urlBuilder
      * @param StoreManagerInterface $storeManager
+     * @param Data $helperData
      */
     public function __construct(
         AttachmentsData $attachmentsData,
@@ -87,7 +94,8 @@ class Attachments extends AbstractModifier
         TypeUpload $typeUpload,
         ArrayManager $arrayManager,
         UrlInterface $urlBuilder,
-        StoreManagerInterface $storeManager
+        StoreManagerInterface $storeManager,
+        Data $helperData
     ) {
         $this->attachmentsData = $attachmentsData;
         $this->locator = $locator;
@@ -95,6 +103,7 @@ class Attachments extends AbstractModifier
         $this->arrayManager = $arrayManager;
         $this->urlBuilder = $urlBuilder;
         $this->storeManager = $storeManager;
+        $this->helperData = $helperData;
     }
 
     /**
@@ -103,6 +112,9 @@ class Attachments extends AbstractModifier
      */
     public function modifyData(array $data) : array
     {
+        if (!$this->helperData->isEnabled()) {
+            return $data;
+        }
         $model = $this->locator->getProduct();
 
         $data[$model->getId()][self::DATA_SOURCE_DEFAULT]['attachments_title'] = $this->attachmentsData->getAttachmentsTitle();
@@ -117,6 +129,9 @@ class Attachments extends AbstractModifier
      */
     public function modifyMeta(array $meta) : array
     {
+        if (!$this->helperData->isEnabled()) {
+            return $meta;
+        }
         $attachmentsPath = Composite::CHILDREN_PATH . '/' .  Composite::CONTAINER_ATTACHMENTS;
         $attachmentsContainer['arguments']['data']['config'] = [
             'additionalClasses' => 'admin__fieldset-section',
