@@ -1,6 +1,8 @@
 # module-seller-product-attachments-magento2
 Magento 2 Product Attachments for Marketplace, allow seller manage product attachments
 
+![Magento 2 Seller Product Attachments Module](./assets/3.seller_product_attachments.png)
+
 ## Module Features
 - Allow Seller manage product attachments on his dashboard
 - Admin can enable/disable the feature for seller dashboard
