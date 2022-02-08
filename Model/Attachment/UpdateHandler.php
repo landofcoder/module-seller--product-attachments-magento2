@@ -21,7 +21,7 @@ use Lofmp\ProductAttachment\Helper\Data;
  * Class UpdateHandler
  * @package Lofmp\ProductAttachment\Model\Attachment
  */
-class UpdateHandler extends \Lofmp\ProductAttachment\Model\Attachment\UpdateHandler
+class UpdateHandler extends \LizardMedia\ProductAttachment\Model\Attachment\UpdateHandler
 {
     /**
      * @var AttachmentRepositoryInterface

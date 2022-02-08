@@ -2,11 +2,11 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <lofmpproductattachment>
-            <general>
-                <enabled>1</enabled>
-            </general>
-        </lofmpproductattachment>
+        <catalog>
+            <product_attachments>
+                <enable_for_seller>1</enable_for_seller>
+            </product_attachments>
+        </catalog>
     </default>
 </config>
 

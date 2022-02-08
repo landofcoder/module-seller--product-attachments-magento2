@@ -34,9 +34,9 @@ use Lof\MarketPlace\Model\ConfigFactory;
  */
 class Data extends AbstractHelper
 {
-    const XML_PATH_SECTION = 'lofmpproductattachment/';
-    const XML_PATH_GROUP = 'general/';
-    const XML_PATH_ENABLE = 'lofmpproductattachment/general/enabled';
+    const XML_PATH_SECTION = 'catalog/';
+    const XML_PATH_GROUP = 'product_attachments/';
+    const XML_PATH_ENABLE = 'catalog/product_attachments/enable_for_seller';
 
     /**
      * @var StoreManagerInterface
@@ -137,7 +137,7 @@ class Data extends AbstractHelper
      */
     public function isEnabled($storeId = 0)
     {
-        return (int)$this->getConfig('general/enabled', $storeId);
+        return (int)$this->getConfig('product_attachments/enable_for_seller', $storeId);
     }
 
     /**

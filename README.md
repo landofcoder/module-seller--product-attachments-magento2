@@ -35,3 +35,6 @@ Magento 2 Product Attachments for Marketplace, allow seller manage product attac
 - enable the module by running `php bin/magento module:enable Lofmp_ProductAttachment`
 - apply database updates by running `php bin/magento setup:upgrade`\*
 - Flush the cache by running `php bin/magento cache:flush`
+
+3. Module Settings
+- Go to admin > Stores > Configuration > Catalog > Catalog > Product Attachments
